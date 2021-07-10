@@ -20,15 +20,19 @@ export default class LatestMovieReviews extends Component {
     componentDidMount(){
         fetch(URL)
         .then(resp =>resp.json())
-        .then(({results}) => 
+        .then(({results}) => {
+        
             this.setState({ 
                 reviews: results.map(movie => movie.headline) 
             })
+            // debugger
+            console.log("hello")
+        }
         )
     }
 
     makeReviews = () =>{
-        return this.state.reviews.map((movie,index) => <MovieReviews key={index} review = {movie.headline} />)
+        return this.state.reviews.map((movie,index) => <MovieReviews key={index} review = {movie.summary_short} />)
       }
 
     render() {

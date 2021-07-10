@@ -23,9 +23,9 @@ export default class LatestMovieReviews extends Component {
         .then(({results}) => {
         
             this.setState({ 
-                reviews: results.map(movie => movie.headline) 
+                reviews: results.map(movie => movie.summary_short) 
             })
-            // debugger
+            debugger
             console.log("hello")
         }
         )

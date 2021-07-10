@@ -23,7 +23,7 @@ export default class SearchableMovieReviewsContainer extends Component {
         fetch(URL(this.state.searchTerm))
         .then(resp => resp.json())
         .then(({results}) => 
-            this.setState({ reviews: results.map(movie => movie.headline) })     
+            this.setState({ reviews: results.map(movie => movie.summary_short) })     
         )
     }
 
